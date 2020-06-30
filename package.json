@@ -1,0 +1,21 @@
+{
+  "name": "fti-airtable",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gareth Leak",
+  "license": "ISC",
+  "dependencies": {
+    "airtable": "^0.8.1",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.8.0",
+    "moment": "^2.27.0"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0"
+  }
+}
