@@ -20,6 +20,8 @@ const ids = {
   ILIM: 'rec6Gh8E0WThB9pvr',
   Inductor: 'recSLVkwZlWJS5qCm',
   LCRMUX: 'recgUxDSw1SOINmET',
+  MDM4: 'recIinaxfgHlpSir9',
+  'MDM-BP': 'recpA2nlz5LAtPwWc',
   Nano: 'recV2gj4moPeQgIXi',
   PG: 'reca7fTvS1TIlySLu',
   QGCAL: 'recwWyZ9tBYX06QcB',
