@@ -13,17 +13,22 @@ const base = new Airtable({
 
 // Setting variables
 const update = {};
-// Create a reference table of links to the Module Log
 
 base('Module Log').select({
-  filterByFormula: '{Material Status} = ""',
+  filterByFormula: 'OR({Material Status} = "", {Module} = "")',
 }).firstPage((err, records) => {
   if (err) {
     console.error(err);
     return;
   }
   records.forEach((record) => {
-    update['Material Status'] = [dict.ids[record.get('Module')]];
+    if (record.get('Module') == undefined) {
+      const name = record.get('Name').split(' ')
+      update['Module'] = name[0];
+      update['Material Status'] = [dict.ids[name[0]]];
+    } else {
+      update['Material Status'] = [dict.ids[record.get('Module')]];
+    }
 
     base('Module Log').update(record.id, update, (error) => {
       if (error) {
@@ -34,3 +39,6 @@ base('Module Log').select({
     console.log(`Modified ${record.get('Name')} (${record.id})`);
   });
 });
+
+
+// NEED TO CHECK FOR NO "MODULE" SET
